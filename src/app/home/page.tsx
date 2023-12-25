@@ -8,6 +8,7 @@ import { CiCircleMore } from "react-icons/ci";
 import { BsSlashSquare } from "react-icons/bs";
 import { TbNotes } from "react-icons/tb";
 import { LuUsers2 } from "react-icons/lu";
+import FeedCard from "@/components/FeedCard/page";
 
 
 interface sideBarItemsType  {
@@ -68,21 +69,29 @@ export default function HomeLayout(){
         <div>
             <div className='grid grid-cols-12 w-screen h-screen'>
                 <div className='col-span-3 pl-[25%] mr-8'>
-                    <div className="text-3xl w-fit p-2 hover:bg-gray-600 rounded-full m-1 cursor-pointer">
+                    <div className="text-3xl w-fit p-2 hover:bg-[#181818] rounded-full m-1 cursor-pointer transition-all">
                     <FaXTwitter/>
                     </div>
                     <ul>
                         {sideBarItems.map((item)=>(
-                            <li key={item.title} className="flex gap-4 w-fit my-2 hover:bg-gray-600 rounded-full px-3 py-2 cursor-pointer">
-                                <span className="text-3xl">{item.icon}</span>
-                                <span className="text-xl">{item.title}</span>
+                            <li key={item.title} className="flex gap-4 w-fit my-2 hover:bg-[#181818] rounded-full pr-6 pl-3 py-2 cursor-pointer transition-all">
+                                <span className="text-2xl">{item.icon}</span>
+                                <span className="text-lg">{item.title}</span>
                             </li>
                         ))}
                     </ul>
-                    <button className="text-lg font-semibold bg-[#1D9BF0] p-3 w-full rounded-full hover:bg-[#188CD8]">Post</button>
+                    <button className="text-lg font-semibold bg-[#1D9BF0] p-3 w-full rounded-full hover:bg-[#188CD8] transition-all cursor-pointer">Post</button>
                 </div>
-                <div className='col-span-6 border'>feed</div>
-                <div className='col-span-3'>search</div>
+                <div className='col-span-5 border border-gray-600 border-y-0 overflow-scroll'>
+                    <FeedCard/>
+                    <FeedCard/>
+                    <FeedCard/>
+                    <FeedCard/>
+                    <FeedCard/>
+                    <FeedCard/>
+                    <FeedCard/>
+                </div>
+                <div className='col-span-4'>search</div>
             </div>
         </div>
         
