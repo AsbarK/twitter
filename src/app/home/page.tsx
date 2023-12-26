@@ -9,6 +9,7 @@ import { BsSlashSquare } from "react-icons/bs";
 import { TbNotes } from "react-icons/tb";
 import { LuUsers2 } from "react-icons/lu";
 import FeedCard from "@/components/FeedCard/page";
+import GoogleLoginSiginIn from "@/components/GoogleLogin/page";
 
 
 interface sideBarItemsType  {
@@ -91,7 +92,9 @@ export default function HomeLayout(){
                     <FeedCard/>
                     <FeedCard/>
                 </div>
-                <div className='col-span-4'>search</div>
+                <div className='col-span-4'>
+                    <GoogleLoginSiginIn />
+                </div>
             </div>
         </div>
         
