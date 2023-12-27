@@ -10,6 +10,7 @@ import { TbNotes } from "react-icons/tb";
 import { LuUsers2 } from "react-icons/lu";
 import FeedCard from "@/components/FeedCard/page";
 import GoogleLoginSiginIn from "@/components/GoogleLogin/page";
+import ProfileBadge from "@/components/profile/page";
 
 
 interface sideBarItemsType  {
@@ -66,6 +67,7 @@ const sideBarItems : sideBarItemsType[] = [
 ]
 
 export default function HomeLayout(){
+    
     return(
         <div>
             <div className='grid grid-cols-12 w-screen h-screen'>
@@ -82,6 +84,9 @@ export default function HomeLayout(){
                         ))}
                     </ul>
                     <button className="text-lg font-semibold bg-[#1D9BF0] p-3 w-full rounded-full hover:bg-[#188CD8] transition-all cursor-pointer">Post</button>
+                    <div className="absolute bottom-4 px-3 py-2 hover:bg-[#181818] rounded-full transition-all cursor-pointer">
+                        <ProfileBadge/>
+                    </div>
                 </div>
                 <div className='col-span-5 border border-gray-600 border-y-0 overflow-scroll'>
                     <FeedCard/>
