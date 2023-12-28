@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import {GoogleOAuthProvider} from '@react-oauth/google'
 import './globals.css'
 import { Toaster } from 'react-hot-toast'
-import {RecoilRoot} from 'recoil'
 import ReactQueryTag from '@/components/reactQuery/page'
 
 const inter = Inter({ subsets: ['latin'] })

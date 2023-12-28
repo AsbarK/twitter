@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import { GoHomeFill } from "react-icons/go";
 import { IoSearch } from "react-icons/io5";
@@ -11,6 +12,10 @@ import { LuUsers2 } from "react-icons/lu";
 import FeedCard from "@/components/FeedCard/page";
 import GoogleLoginSiginIn from "@/components/GoogleLogin/page";
 import ProfileBadge from "@/components/profile/page";
+import TweetInputCard from "@/components/InputCard/page";
+import { useGetAllTweets } from "@/hooks/tweet";
+import { Tweet, User } from "@/gql/graphql";
+import { useCurrentUser } from "@/hooks/user";
 
 
 interface sideBarItemsType  {
@@ -67,7 +72,7 @@ const sideBarItems : sideBarItemsType[] = [
 ]
 
 export default function HomeLayout(){
-    
+    const {tweets=[]} = useGetAllTweets()
     return(
         <div>
             <div className='grid grid-cols-12 w-screen h-screen'>
@@ -89,13 +94,10 @@ export default function HomeLayout(){
                     </div>
                 </div>
                 <div className='col-span-5 border border-gray-600 border-y-0 overflow-scroll'>
-                    <FeedCard/>
-                    <FeedCard/>
-                    <FeedCard/>
-                    <FeedCard/>
-                    <FeedCard/>
-                    <FeedCard/>
-                    <FeedCard/>
+                    <TweetInputCard/>
+                    {tweets && tweets.map((tweet)=>(
+                        <FeedCard data={tweet as Tweet} key={tweet?.id}/>
+                    ))}
                 </div>
                 <div className='col-span-4'>
                     <GoogleLoginSiginIn />
