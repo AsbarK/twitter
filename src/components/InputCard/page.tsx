@@ -19,7 +19,6 @@ export default function TweetInputCard(){
     const {mutate} = useCreateTweet()
 
     const handleCreateTweet = useCallback(()=>{
-        console.log(content)
         mutate({
             content,
         })

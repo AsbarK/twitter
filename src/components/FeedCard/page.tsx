@@ -4,6 +4,7 @@ import { BiRepost,BiMessageRounded } from "react-icons/bi";
 import { IoIosHeartEmpty,IoIosStats } from "react-icons/io";
 import { LuShare } from "react-icons/lu";
 import { Tweet } from "@/gql/graphql";
+import Link from "next/link";
 
 interface FeedCardDataType{
     data: Tweet
@@ -16,10 +17,12 @@ export default function FeedCard(props:FeedCardDataType){
             </div>
             <div className="col-span-11 p-2 flex-col justify-between items-center">
                 <div>
-                    <div>
-                        {props.data.author?.firstName}
-                        {props.data.author?.lastName}
-                    </div>
+                    <Link href={`/${props.data.author?.id}`}>
+                        <div>
+                            {props.data.author?.firstName}
+                            {props.data.author?.lastName}
+                        </div>
+                    </Link>
                     <p>
                         {props.data.content}
                     </p>
