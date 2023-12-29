@@ -10,6 +10,7 @@ interface FeedCardDataType{
     data: Tweet
 }
 export default function FeedCard(props:FeedCardDataType){
+    console.log(props.data)
     return(
         <div className="grid grid-cols-12 border border-gray-600 border-x-0 border-b-0 mb-2 px-2">
             <div className="col-span-1">
@@ -26,6 +27,7 @@ export default function FeedCard(props:FeedCardDataType){
                     <p>
                         {props.data.content}
                     </p>
+                    {props.data.imageUrl && <Image src={props.data.imageUrl} alt="user-tweet-img" height={300} width={300}/>}
                 </div>
                 <div className="flex justify-between text-lg text-[#71767B]">
                     <div className="hover:bg-gradient-radial from-[#043657] to-black rounded-full p-2 transition-all cursor-pointer">
