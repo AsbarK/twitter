@@ -10,7 +10,6 @@ interface FeedCardDataType{
     data: Tweet
 }
 export default function FeedCard(props:FeedCardDataType){
-    console.log(props.data)
     return(
         <div className="grid grid-cols-12 border border-gray-600 border-x-0 border-b-0 mb-2 px-2">
             <div className="col-span-1">

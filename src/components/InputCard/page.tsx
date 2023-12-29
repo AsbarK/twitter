@@ -54,6 +54,8 @@ export default function TweetInputCard(){
             content,
             imageUrl
         })
+        setContent('')
+        setImageUrl('')
     },[content,mutate,imageUrl])
     
     return (

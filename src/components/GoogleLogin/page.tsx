@@ -5,11 +5,10 @@ import { useCurrentUser } from "@/hooks/user";
 import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 import { useCallback } from "react";
 import toast from "react-hot-toast";
-import {  useQueryClient } from "@tanstack/react-query";
+// import {  useQueryClient } from "@tanstack/react-query";
 
 export default function GoogleLoginSiginIn(){
     const {user} = useCurrentUser()
-    const queryClient = useQueryClient()
 
     const handleLoginWithGoogle = useCallback(async(cred:CredentialResponse)=>{
         const googleToken = cred.credential
@@ -20,9 +19,9 @@ export default function GoogleLoginSiginIn(){
         toast.success('verified Successfully')
         if(verifyGoogleToken){
             window.localStorage.setItem('twittertoken',verifyGoogleToken)
+            window.location.reload()
         }
-        await queryClient.invalidateQueries({queryKey:['current-user']})
-    },[queryClient])
+    },[])
     return (
         !user && <div className="p-4 text-center">
             <h1>New to TWITTER?</h1>

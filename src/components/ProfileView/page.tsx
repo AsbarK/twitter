@@ -1,4 +1,3 @@
-import { User } from "@/gql/graphql"
 import FeedCard from "@/components/FeedCard/page";
 import { Tweet } from "@/gql/graphql";
 import Image from "next/image";
