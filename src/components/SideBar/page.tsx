@@ -8,7 +8,7 @@ import { CiCircleMore } from "react-icons/ci";
 import { BsSlashSquare } from "react-icons/bs";
 import { TbNotes } from "react-icons/tb";
 import { LuUsers2 } from "react-icons/lu";
-import ProfileBadge from "@/components/profile/page";
+import ProfileBadge from "@/components/UserProfile/page";
 import { useCurrentUser } from "@/hooks/user";
 import Link from "next/link";
 
@@ -27,47 +27,47 @@ export default function SideBar(){
         {
             title: 'Home',
             icon: <GoHomeFill/>,
-            link:'/'
+            link:'/home'
         },
         {
             title: 'Explore',
             icon: <IoSearch/>,
-            link:'/'
+            link:'/home'
         },
         {
             title: 'Notifications',
             icon: <HiOutlineBell/>,
-            link:'/'
+            link:'/home'
         },
         {
             title: 'Messages',
             icon: <FaRegEnvelope/>,
-            link:'/'
+            link:'/home'
         },
         {
             title: 'Grok',
             icon: <BsSlashSquare/>,
-            link:'/'
+            link:'/home'
         },
         {
             title: 'Lists',
             icon: <TbNotes/>,
-            link:'/'
+            link:'/home'
         },
         {
             title: 'Bookmarks',
             icon: <FaRegBookmark/>,
-            link:'/'
+            link:'/home'
         },
         {
             title: 'Communities',
             icon: <LuUsers2/>,
-            link:'/'
+            link:'/home'
         },
         {
             title: 'Premium',
             icon: <FaXTwitter/>,
-            link:'/'
+            link:'/home'
         },
         {
             title: 'Profile',
@@ -77,7 +77,7 @@ export default function SideBar(){
         {
             title: 'More',
             icon: <CiCircleMore/>,
-            link:'/'
+            link:'/home'
         },
     
     ]
