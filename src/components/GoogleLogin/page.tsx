@@ -5,7 +5,6 @@ import { useCurrentUser } from "@/hooks/user";
 import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 import { useCallback } from "react";
 import toast from "react-hot-toast";
-// import {  useQueryClient } from "@tanstack/react-query";
 
 export default function GoogleLoginSiginIn(){
     const {user} = useCurrentUser()
@@ -19,7 +18,7 @@ export default function GoogleLoginSiginIn(){
         toast.success('verified Successfully')
         if(verifyGoogleToken){
             window.localStorage.setItem('twittertoken',verifyGoogleToken)
-            window.location.reload()
+            window.location.href = 'http://localhost:3000/home'
         }
     },[])
     return (

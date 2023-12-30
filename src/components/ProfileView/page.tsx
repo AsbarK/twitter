@@ -6,9 +6,14 @@ import { BsArrowLeftShort } from "react-icons/bs";
 
 
 interface ProfileViewProps{
-    userInfo: any
+    userInfo: any,
+    paramid: string,
+    amIFollowing: Boolean
+    unFollowFun: any,
+    followFun:any
 }
-export default function ProfileViewComponent({userInfo}:ProfileViewProps){
+export default function ProfileViewComponent({userInfo,paramid,amIFollowing,unFollowFun,followFun}:ProfileViewProps){
+  console.log(amIFollowing)
     return (
         <div>
         <div>
@@ -36,23 +41,23 @@ export default function ProfileViewComponent({userInfo}:ProfileViewProps){
             <h1 className="text-2xl font-bold mt-5">
             {userInfo.firstName} {userInfo?.lastName}
             </h1>
-            {/* <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center">
               <div className="flex gap-4 mt-2 text-sm text-gray-400">
-                <span>{props.userInfo?.followers?.length} followers</span>
-                <span>{props.userInfo?.following?.length} following</span>
+                <span className="flex items-center gap-1"><span className=" font-bold text-white">{userInfo?.followers?.length}</span> Followers</span>
+                <span className="flex items-center gap-1"><span className=" font-bold text-white">{userInfo?.following?.length}</span> Following</span>
               </div>
-              {currentUser?.id !== props.userInfo?.id && (
+              {paramid !== userInfo?.id && (
                 <>
                   {amIFollowing ? (
                     <button
-                      onClick={handleUnfollowUser}
+                      onClick={unFollowFun}
                       className="bg-white text-black px-3 py-1 rounded-full text-sm"
                     >
                       Unfollow
                     </button>
                   ) : (
                     <button
-                      onClick={handleFollowUser}
+                      onClick={followFun}
                       className="bg-white text-black px-3 py-1 rounded-full text-sm"
                     >
                       Follow
@@ -60,7 +65,7 @@ export default function ProfileViewComponent({userInfo}:ProfileViewProps){
                   )}
                 </>
               )}
-            </div> */}
+            </div>
           </div>
           <div>
             {userInfo?.tweets?.map((tweet: Tweet) => (
