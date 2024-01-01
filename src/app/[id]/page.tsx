@@ -15,11 +15,6 @@ export default function ProfilePage({params}:{params:{id:string}}){
 
     const amIFollowing = useMemo(()=>{
       if(!userInfo ) return false
-      
-      console.log(user?.following?.findIndex((fl)=>{
-        console.log(fl?.id,userInfo?.id,user)
-        return fl?.id === user?.id
-      }))
       return (
         (user?.following?.findIndex((fl)=>{
           return fl?.id === userInfo?.id
